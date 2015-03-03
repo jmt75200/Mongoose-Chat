@@ -1,0 +1,21 @@
+doctype
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  title SUP Chat
+body
+  h1 SUP Chat
+
+  section.chat_container
+    each chat in chats
+      span.username!= chat.username
+      p.message!= chat.message
+      
+  section.form_container
+    form( action = "/chat", method="POST")
+      fieldset
+        div.message_container
+          input( type = "text", name = "message", placeholder = "Message")
+          button Send 
+        div.username_container 
+          input( type = "text", name="username", placeholder="Handle")
